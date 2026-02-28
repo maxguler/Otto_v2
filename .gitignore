@@ -17,6 +17,12 @@ dist-ssr
 .env.local
 .env.*.local
 
+# Deploy temp
+dist-deploy.zip
+
+# Backups (generados por scripts/backup.js)
+Otto-2.0-backup-*.zip
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

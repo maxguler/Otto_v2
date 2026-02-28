@@ -120,6 +120,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 ```
 
+### cPanel (deploy automático con Playwright)
+
+1. En `.env` define `CPANEL_URL`, `CPANEL_USER`, `CPANEL_PASSWORD` (ver `.env.example`).
+2. Ejecuta:
+   ```bash
+   npm run deploy:cpanel
+   ```
+   El script hace build, crea un zip de `dist/`, abre cPanel en el navegador, inicia sesión, sube el zip a File Manager en `public_html` y lo extrae. Si tu cPanel tiene otra estructura, edita `scripts/deploy-cpanel.js` (selectores).
+
 ### Checklist pre-deploy
 
 - [ ] Variable `VITE_BACKEND_URL` configurada en el entorno de producción
